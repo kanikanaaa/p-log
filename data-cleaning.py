@@ -1,4 +1,4 @@
-# Code by Gemini2.5Pro - import the data and analyze
+# Loading and Cleaning data, and preparation of analysis
 
 import json
 import pandas as pd
@@ -7,8 +7,11 @@ import re
 import plotly.express as px
 import plotly.graph_objects as go
 
+# specify the file name
+filename = "flights.Kanikana.world2024" # ここにファイル名を入力
+
 # Load the JSON data
-file_path = 'data2024.json'
+file_path = 'drive/MyDrive/p-log/' + filename + '.json'
 with open(file_path, 'r') as f:
     data = json.load(f)
 
@@ -86,4 +89,3 @@ df['date'] = pd.to_datetime(df['date'])
 df.dropna(subset=['date', 'month', 'year'], inplace=True)
 df['month'] = df['month'].astype(int) # Ensure month is integer for plotting
 df['year'] = df['year'].astype(int) # Ensure year is integer for plotting
-
