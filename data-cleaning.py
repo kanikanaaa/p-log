@@ -1,4 +1,5 @@
 # Loading and Cleaning data, and preparation of analysis
+!pip install isodate
 
 import json
 import pandas as pd
